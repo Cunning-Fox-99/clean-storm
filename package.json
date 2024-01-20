@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "fbgraph": "^1.4.4",
+    "swiper": "^8.4.6"
+  }
+}

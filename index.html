@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+    <title>Clean Storm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style1.css">
+</head>
+<body>
+
+<div class="modal-window" id="modal-window">
+
+    <div class="modal-window__wrapper">
+
+        <div class="modal-window__close" id="close-modal"></div>
+
+        <form class="form-block active" id="form-block">
+            <label class="form-block__item">
+                <input required name="email" type="text" placeholder="Телефон">
+            </label>
+
+            <label class="form-block__item">
+                <select name="subject" id="">
+                    <option>Хімчистка м’ягких меблів</option>
+                    <option>Видалення запахів і плям</option>
+                    <option>Хімчистка килимів</option>
+                    <option>Хімчистка матраців</option>
+                </select>
+            </label>
+
+            <label class="form-block__item">
+                <textarea required name="message" rows="4" placeholder="Повідомлення..."></textarea>
+            </label>
+
+            <button class="form-block__button button" type="submit">Замовити дзвінок!</button>
+
+        </form>
+
+        <div class="lds-roller" id="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="email-send" id="email-send">
+            <img src="images/success.svg" alt="">
+            <span class="email-send__text">Дякуємо за замовлення!</span>
+            <p>Ми зв'яжемося з вами протягом години</p>
+        </div>
+
+        <div class="email-error" id="email-error">
+            <img src="images/error.svg" alt="">
+        </div>
+
+    </div>
+
+</div>
+
+<main>
+
+    <div class="main-block">
+
+        <header class="header container">
+
+            <div class="header__logo">
+                <img src="images/logo.svg" alt="">
+            </div>
+
+            <div class="mobile-button" id="mobile-button">
+                <div class="mobile-button__button"></div>
+            </div>
+
+            <ul class="header__nav" id="nav-list">
+                <li class="header__link"><a href="#main">Головна</a></li>
+                <li class="header__link"><a href="#services">Послуги</a></li>
+                <li class="header__link"><a href="#price">Ціни</a></li>
+                <li class="header__link"><a href="#portfolio">Наші роботи</a></li>
+                <li class="header__link"><a href="#contact">Контакти</a></li>
+                <li class="header__social">
+                    <a href="viber://add?number=380960313883" class="header__social-item">
+                        <img src="./images/social-list/viber-black.svg" alt="">
+                    </a>
+
+                    <a href="https://www.instagram.com/cleanstormua/" class="header__social-item">
+                        <img src="./images/social-list/inst-black.svg" alt="">
+                    </a>
+
+                    <a href="https://wa.me/380960313883" class="header__social-item">
+                        <img src="./images/social-list/whatsapp-black.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+
+        </header>
+
+        <div class="preview container" id="main">
+
+            <div class="preview__column preview__column--1">
+                <h1 class="preview__title">Хімчистка м’ягких меблів на дому</h1>
+                <p class="preview__text">Професійне чищення диванів, матраців та килимового покриття від більшості
+                    забруднень. Видалимо плями та подаруємо нове життя вашим меблям.</p>
+
+                <div class="preview__buttons">
+                    <button class="preview__button button" data-open-modal>Замовити дзвінок!</button>
+                    <a href="tel:+38 096 03 13 883" class="preview__button-mobile button">Зателефонувати</a>
+                </div>
+
+            </div>
+
+            <div class="preview__column preview__column--2">
+                <div class="preview__top"></div>
+
+
+                <div class="preview__wrapper">
+                    <img src="images/main-preview.png" alt="" class="preview__image">
+
+                    <ul class="preview__list">
+                        <li class="preview__item">
+                            <img src="images/main/i-1.svg" alt="">
+                            <p>Працюємо 24/7</p>
+                        </li>
+                        <li class="preview__item">
+                            <img src="images/main/i-2.svg" alt="">
+                            <p>Швидке виведення плям та запахів</p>
+                        </li>
+                        <li class="preview__item">
+                            <img src="images/main/i-3.svg" alt="">
+                            <p>Гарантія результату</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <img src="images/main-bg.png" alt="" class="preview__bg">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="services" id="services">
+
+        <div class="services__wrapper">
+
+            <h2 class="services__title">Послуги</h2>
+
+            <div class="services__list">
+
+                <a href="#block-1" class="services__item">
+                    <img src="images/services/i-1.svg" alt="">
+                    <p>Хімчистка м’ягких меблів </p>
+                </a>
+
+                <a href="#block-4" class="services__item">
+                    <img src="images/services/i-2.svg" alt="">
+                    <p>Видалення запахів і плям</p>
+                </a>
+
+                <a href="#block-2" class="services__item">
+                    <img src="images/services/i-3.svg" alt="">
+                    <p>Хімчистка килимів</p>
+                </a>
+
+                <a href="#block-3" class="services__item">
+                    <img src="images/services/i-4.svg" alt="">
+                    <p>Хімчистка матраців</p>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="services__top"></div>
+        <div class="services__bottom"></div>
+        <img src="images/services/left.svg" alt="" class="services__left">
+        <img src="images/services/right.svg" alt="" class="services__right">
+
+    </div>
+
+    <div class="price" id="price">
+
+        <div class="price__wrapper container">
+
+            <h2 class="price__title">Ціни на наші послуги</h2>
+
+            <div class="price__list">
+
+                <div class="price__column">
+                    <div class="price__item">
+                        <img src="images/price/i-1.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Крісло</h6>
+                            <span>280 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-5.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Крісло мішок</h6>
+                            <span>від 150 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-9.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Крісло офіс</h6>
+                            <span>90 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-13.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Диван кутовий</h6>
+                            <span>850 грн</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price__column">
+                    <div class="price__item">
+                        <img src="images/price/i-2.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Диван 2x місц.</h6>
+                            <span>550 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-6.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Диван 3х місц.</h6>
+                            <span>750 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-10.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Диван-малют.</h6>
+                            <span>450 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-14.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Диван-тахта</h6>
+                            <span>650 грн</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price__column">
+                    <div class="price__item">
+                        <img src="images/price/i-3.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Стіл офіс</h6>
+                            <span>70 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-7.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Стул кухонний</h6>
+                            <span>50 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-11.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Табурет</h6>
+                            <span>40 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-15.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Запах</h6>
+                            <span>від 100 грн</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price__column">
+                    <div class="price__item">
+                        <img src="images/price/i-4.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Матрац дитячий</h6>
+                            <span>200 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-8.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Матрац 1 місц.</h6>
+                            <span>350 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-12.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Матрац 2х місц.</h6>
+                            <span>700 грн</span>
+                        </div>
+                    </div>
+                    <div class="price__item">
+                        <img src="images/price/i-16.svg" alt="" class="price__icon">
+                        <div class="price__item-wrapper">
+                            <h6>Килим</h6>
+                            <span>від 55 грн м2</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="price__bottom">
+                <span class="price__bottom-text">
+                    Вартість вказана за усереднено стандартний розмір меблів та може змінюватись
+                    в залежності від габаритів.Ступінь забруднення
+                    на ціну <b>НЕ ВПЛИВАЄ</b>. Виїзд майтра в межах міста <b>БЕЗКОШТОВНИЙ</b>
+                </span>
+
+                <span class="price__bottom-text">
+                    Для уточнення ціни залишайте заявку, наші фахівці проконсультують вас з усіх питань.
+                </span>
+
+                <button class="price__button button" data-open-modal>Замовити дзвінок!</button>
+            </div>
+
+        </div>
+
+        <img src="images/price/left.svg" alt="" class="price__left">
+        <img src="images/price/right.svg" alt="" class="price__right">
+
+    </div>
+
+    <div class="block" id="block-1">
+
+        <h4 class="block__title">Хімчистка м’ягких меблів </h4>
+
+        <div class="block__wrapper container">
+
+            <div class="block__column block__column--1">
+                <h4 class="block__list-title">Етапи хімчистки</h4>
+
+                <ul class="block__list">
+                    <li class="block__item">
+                        <img src="images/block/i-1.svg" alt="">
+                        <span>Замочування</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-2.svg" alt="">
+                        <span>Чистка</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-3.svg" alt="">
+                        <span>Полоскання</span>
+                    </li>
+                </ul>
+
+                <p class="block__text">
+                    Це процедура глибокого чищення оббивки із застосуванням професійних хімічних засобів та потужного
+                    спецобладнання. Її результатом є візуальне оновлення оббивного матеріалу. У такий спосіб
+                    позбавляються плям і розводів, а також нейтралізують неприємні запахи. Ми пропонуємо Вам
+                    скористатися цією послугою у будь-який зручний час.
+                </p>
+
+            </div>
+
+            <div class="block__column block__column--2">
+                <img src="images/block/block-1.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="block block--1" id="block-2">
+
+        <h4 class="block__title">Хімчистка килимів</h4>
+
+        <div class="block__wrapper container">
+
+            <div class="block__column block__column--1">
+                <h4 class="block__list-title">Етапи хімчистки</h4>
+
+                <ul class="block__list">
+                    <li class="block__item">
+                        <img src="images/block/i-4.svg" alt="">
+                        <span>Оцінюємо ступінь забруднення</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-5.svg" alt="">
+                        <span>Чистка килима</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-3.svg" alt="">
+                        <span>Полоскання</span>
+                    </li>
+                </ul>
+
+                <p class="block__text">
+                    Завдяки Clean Storm текстиль у Вашому будинку буде бездоганним. Хімчистку килимів та килимових
+                    покриттів можна проводити навіть у дитячій кімнаті. Ми використовуємо лише сертифіковані засоби,
+                    безпечні для людей і тварин. Вони не впливають навіть на здоров'я дошкільнят та дітей будь-якого
+                    віку. Навпаки, чищення дозволяє покращити самопочуття, прибравши пил та збудників алергії.
+                </p>
+
+            </div>
+
+            <div class="block__column block__column--2">
+                <img src="images/block/block-2.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="block" id="block-3">
+
+        <h4 class="block__title">Хімчистка матраців</h4>
+
+        <div class="block__wrapper container">
+
+            <div class="block__column block__column--1">
+                <h4 class="block__list-title">Етапи хімчистки</h4>
+
+                <ul class="block__list">
+                    <li class="block__item">
+                        <img src="images/block/i-6.svg" alt="">
+                        <span>Суха чистка</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-7.svg" alt="">
+                        <span>Волога чистка</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-8.svg" alt="">
+                        <span>Промивання та полоскання</span>
+                    </li>
+                </ul>
+
+                <p class="block__text">
+                    Спати на красивому та чистому ліжку має право кожен! Щоб послуга хімчистки матраців була трохи
+                    доступнішою, у нас передбачена система знижок. Ми знижуємо ціни на 5% для пенсіонерів та батьків
+                    маленьких дітей, а також приємно радіємо знижкою 10% своїх постійних клієнтів.
+                </p>
+
+            </div>
+
+            <div class="block__column block__column--2">
+                <img src="images/block/block.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="block block--1" id="block-4">
+
+        <h4 class="block__title">Видалення запахів і плям</h4>
+
+        <div class="block__wrapper container">
+
+            <div class="block__column block__column--1">
+                <h4 class="block__list-title">Етапи хімчистки</h4>
+
+                <ul class="block__list">
+                    <li class="block__item">
+                        <img src="images/block/i-9.svg" alt="">
+                        <span>Екстракція</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-10.svg" alt="">
+                        <span>Прання</span>
+                    </li>
+                    <li class="block__item">
+                        <img src="images/block/i-3.svg" alt="">
+                        <span>Полоскання</span>
+                    </li>
+                </ul>
+
+                <p class="block__text">
+                    Майстри «Clean Storm» мають великий досвід усунення запахів та різних забруднень. У роботі ми
+                    використовуємо індивідуальний підхід до кожного клієнта. У нашому розпорядженні професійне
+                    американське обладнання, першокласні порошки і засоби для виведення плям.
+                </p>
+
+            </div>
+
+            <div class="block__column block__column--2">
+                <img src="images/block/block-4.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="slider" id="portfolio">
+
+        <div class="slider__wrapper container">
+
+            <h4 class="slider__title">Наші роботи</h4>
+
+            <div class="swiper mySwiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="images/slider/1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/3.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/4.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/5.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/6.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/7.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/8.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/9.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/10.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/11.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/12.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/13.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/14.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/15.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/16.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/17.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/18.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/19.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/20.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/21.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/22.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/23.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/24.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/25.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slider/26.jpg" alt=""></div>
+
+                </div>
+
+                <!--                <div class="swiper-pagination"></div>-->
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="review container">
+
+        <div class="review__title">Відгуки</div>
+
+        <div class="swiper mySwiper2">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+
+                    <a href="https://www.facebook.com/illa.tria.5">
+                        <img src="images/review/user-1.png" alt="">
+                        <h6>Illa Tria</h6>
+                        <span>disrespectful attitude. I do not advise.</span>
+                    </a>
+
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.facebook.com/mikheevacakeod">
+                        <img src="images/review/user-2.png" alt="">
+                        <h6>Анастасия</h6>
+                        <span>Отлично! и качество, и цена. спасибо!</span>
+                    </a>
+
+                </div>
+
+                <div class="swiper-slide">
+
+                    <a href="https://www.facebook.com/profile.php?id=100022876988416">
+                        <img src="images/review/user-3.png" alt="">
+                        <h6>Татьяна</h6>
+                        <span>Подарили дивану новую жизнь,чистота))</span>
+                    </a>
+
+                </div>
+
+                <div class="swiper-slide">
+
+                    <a href="https://www.facebook.com/arina.novachyk">
+                        <img src="images/review/user-4.png" alt="">
+                        <h6>Arina </h6>
+                        <span>Диван как новый. Очень быстро и качественно почистили. Спасибо большое!</span>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <!--            <div class="swiper-button-prev"></div>-->
+            <!--            <div class="swiper-button-next"></div>-->
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer" id="contact">
+
+    <div class="footer__wrapper container">
+
+        <div class="footer__columns">
+
+            <div class="footer__column footer__column--1">
+                <img src="images/logo.svg" alt="">
+                <span class="footer__text">Clean Storm   - бездоганна репутація у сфері професійної хімчистки!</span>
+                <button class="footer__button button" data-open-modal>Замовити дзвінок!</button>
+            </div>
+
+            <div class="footer__column footer__column--2">
+                <h6>Телефон:</h6>
+                <a href="tel:+38 096 03 13 883">+38 096 03 13 883</a>
+                <a href="tel:+38 073 03 13 883">+38 073 03 13 883</a>
+
+
+            </div>
+
+            <div class="footer__column footer__column--3">
+                <h6>Cоц мережі:</h6>
+                <div class="social-list">
+                    <a href="mailto:сleanstormua@gmail.com" class="social-list__item"><img
+                            src="images/social-list/mail.svg" alt=""></a>
+                    <a href="https://www.instagram.com/cleanstormua/" class="social-list__item"><img
+                            src="images/social-list/inst.svg" alt=""></a>
+                    <a href="viber://add?number=380960313883" class="social-list__item"><img
+                            src="images/social-list/viber-white.svg" alt=""></a>
+                    <a href="https://wa.me/380960313883" class="social-list__item"><img
+                            src="images/social-list/whatsapp-white.svg" alt=""></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">© 2022 - Всі права захищені.</div>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+
+    const swiper = new Swiper(".mySwiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        speed: 400,
+        spaceBetween: 30,
+        slidesPerView: 1,
+        loop: true,
+        cssMode: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+        }
+    });
+
+    const swiper2 = new Swiper(".mySwiper2", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        speed: 300,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+            },
+        },
+    });
+</script>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script defer src="script/script.js"></script>
+</body>
+</html>
